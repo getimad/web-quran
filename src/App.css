@@ -1,1 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+
+body {
+  background-color: #fff1dc;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
