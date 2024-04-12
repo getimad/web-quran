@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { SearchBar, SearchResult } from "../components";
 
-const HomeSection: FC = () => {
+const HomePage: FC = () => {
   return (
     <section className="max-w-5xl mx-auto w-11/12">
       <div className="flex flex-col gap-12 w-full mt-32">
@@ -15,4 +15,4 @@ const HomeSection: FC = () => {
   );
 };
 
-export default HomeSection;
+export default HomePage;
