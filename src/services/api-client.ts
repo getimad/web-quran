@@ -1,16 +1,15 @@
 import axios, { AxiosRequestConfig } from "axios";
-import FetchResponse from "../interfaces/FetchResponse";
 
 const axiosInstance = axios.create({
-  baseURL: "http://api.alquran.cloud/v1/",
+  baseURL: "https://api.quran.com/api/v4",
 });
 
 class APIClient<T> {
   getAll = async (
     endpoint: string,
     config?: AxiosRequestConfig,
-  ): Promise<FetchResponse<T[]>> => {
-    const res = await axiosInstance.get<FetchResponse<T[]>>(endpoint, config);
+  ): Promise<T> => {
+    const res = await axiosInstance.get<T>(endpoint, config);
     return res.data;
   };
 
@@ -18,11 +17,8 @@ class APIClient<T> {
     endpoint: string,
     id: string,
     config?: AxiosRequestConfig,
-  ): Promise<FetchResponse<T>> => {
-    const res = await axiosInstance.get<FetchResponse<T>>(
-      `${endpoint}/${id}`,
-      config,
-    );
+  ): Promise<T> => {
+    const res = await axiosInstance.get<T>(`${endpoint}/${id}`, config);
     return res.data;
   };
 }

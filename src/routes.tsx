@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage, SurahPage } from "./pages";
+import { HomePage, ChapterPage } from "./pages";
 import Leyout from "./Leyout";
 
 const routes = createBrowserRouter([
@@ -10,7 +10,7 @@ const routes = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: "surah/:num",
-        element: <SurahPage />,
+        element: <ChapterPage />,
       },
     ],
   },

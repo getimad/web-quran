@@ -1,4 +1,4 @@
 import HomePage from "./HomePage";
-import SurahPage from "./SurahPage";
+import ChapterPage from "./ChapterPage";
 
-export { HomePage, SurahPage };
+export { HomePage, ChapterPage };

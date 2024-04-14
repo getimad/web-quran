@@ -1,39 +1,26 @@
 import { FC } from "react";
 import useSWR from "swr";
 import APIClient from "../services/api-client";
-import { FetchResponse, Surah } from "../interfaces";
-import { useSearchStore } from "../stores";
+import { Chapter, ChapterResponse } from "../interfaces";
 import SearchItem from "./SearchItem";
 
-const apiClient = new APIClient<Surah>();
+const apiClient = new APIClient<ChapterResponse>();
 
 const SearchResult: FC = () => {
-  const { searchQuery } = useSearchStore((store) => ({
-    searchQuery: store.searchQuery,
-  }));
-
   const {
-    data: { data: surahs } = {},
+    data: { chapters = [] } = {},
     isLoading,
     error,
-  } = useSWR<FetchResponse<Surah[]>>("/surah", (endpoint: string) =>
+  } = useSWR<ChapterResponse>("/chapters", (endpoint: string) =>
     apiClient.getAll(endpoint),
   );
 
-  const surahsFiltered = searchQuery
-    ? surahs?.filter((surah: Surah) =>
-        surah.englishName.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
-    : surahs;
-
   return (
-    surahsFiltered && (
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
-        {surahsFiltered.map((surah: Surah) => (
-          <SearchItem surah={surah} />
-        ))}
-      </ul>
-    )
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+      {chapters.map((chapter: Chapter) => (
+        <SearchItem key={chapter.id} chapter={chapter} />
+      ))}
+    </ul>
   );
 };
 

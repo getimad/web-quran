@@ -1,5 +1,4 @@
-import Ayah from "./Ayah";
-import Surah from "./Surah";
-import FetchResponse from "./FetchResponse";
+import Chapter from "./Chapter";
+import ChapterResponse from "./ChapterResponse";
 
-export type { Surah, Ayah, FetchResponse };
+export type { ChapterResponse, Chapter };
