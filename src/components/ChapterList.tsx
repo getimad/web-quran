@@ -2,11 +2,11 @@ import { FC } from "react";
 import useSWR from "swr";
 import APIClient from "../services/api-client";
 import { Chapter, ChapterResponse } from "../interfaces";
-import SearchItem from "./SearchItem";
+import SearchItem from "./ChapterItem";
 
 const apiClient = new APIClient<ChapterResponse>();
 
-const SearchResult: FC = () => {
+const ChapterList: FC = () => {
   const {
     data: { chapters = [] } = {},
     isLoading,
@@ -24,4 +24,4 @@ const SearchResult: FC = () => {
   );
 };
 
-export default SearchResult;
+export default ChapterList;

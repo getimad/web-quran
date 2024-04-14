@@ -1,5 +1,5 @@
-import SearchBar from "./SearchBar";
-import SearchResult from "./SearchResult";
-import SearchItem from "./SearchItem";
+import Filter from "./ChapterIFilter";
+import ChapterList from "./ChapterList";
+import ChapterItem from "./ChapterItem";
 
-export { SearchBar, SearchResult, SearchItem };
+export { Filter, ChapterItem, ChapterList };

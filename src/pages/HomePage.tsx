@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { SearchBar, SearchResult } from "../components";
+import { Filter, ChapterList } from "../components";
 
 const HomePage: FC = () => {
   return (
@@ -8,8 +8,8 @@ const HomePage: FC = () => {
         <h1 className="text-7xl text-center md:text-8xl lg:text-9xl font-julius text-orange-800">
           Quran
         </h1>
-        <SearchBar />
-        <SearchResult />
+        <Filter />
+        <ChapterList />
       </div>
     </section>
   );

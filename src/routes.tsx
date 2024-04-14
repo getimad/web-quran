@@ -9,7 +9,7 @@ const routes = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: "surah/:num",
+        path: "chapter/:id",
         element: <ChapterPage />,
       },
     ],

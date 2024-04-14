@@ -5,7 +5,7 @@ type Props = {
   chapter: Chapter;
 };
 
-const SearchItem: FC<Props> = ({ chapter }) => {
+const ChapterItem: FC<Props> = ({ chapter }) => {
   return (
     <li className="flex flex-row items-center border-2 rounded-full p-1 border-orange-200">
       <div className="h-12 w-12 flex justify-center items-center rounded-full bg-orange-200">
@@ -24,4 +24,4 @@ const SearchItem: FC<Props> = ({ chapter }) => {
   );
 };
 
-export default SearchItem;
+export default ChapterItem;

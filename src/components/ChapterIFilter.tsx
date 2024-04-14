@@ -5,7 +5,7 @@ import { useSearchStore } from "../stores";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar: FC = () => {
+const ChapterFilter: FC = () => {
   const { searchQuery, setSearchQuery } = useSearchStore();
 
   return (
@@ -28,4 +28,4 @@ const SearchBar: FC = () => {
   );
 };
 
-export default SearchBar;
+export default ChapterFilter;
