@@ -1,3 +1,3 @@
-import useSearchStore from "./useSearchStore";
+import useFilterChapterStore from "./useFilterChapterStore";
 
-export { useSearchStore };
+export { useFilterChapterStore };

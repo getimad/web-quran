@@ -1,28 +1,47 @@
 import { FC } from "react";
-import { useSearchStore } from "../stores";
+import { useFilterChapterStore } from "../stores";
 
 // Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCaretDown,
+  faCaretUp,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ChapterFilter: FC = () => {
-  const { searchQuery, setSearchQuery } = useSearchStore();
+  const { searchQuery, setSearchQuery, isAscending, setIsAscending } =
+    useFilterChapterStore();
 
   return (
     <article className="w-full">
-      <div className="relative">
-        <FontAwesomeIcon
-          className="absolute -translate-y-1/2 top-1/2 left-8 text-orange-800"
-          icon={faMagnifyingGlass}
-          size="xl"
-        />
-        <input
-          className="w-full h-20 pl-20 pr-8 rounded-full outline-none text-lg  font-bold text-orange-800"
-          type="search"
-          placeholder="Search for surah..."
-          onChange={(e) => setSearchQuery(e.target.value)}
-          value={searchQuery}
-        />
+      <div className="flex justify-between gap-3 mt-6 text-sm text-orange-800 bg-orange-200 rounded-full px-3">
+        <div className="flex flex-row gap-2 items-center w-full">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <input
+            className="bg-transparent w-full outline-none h-8 font-medium"
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search for surah..."
+          />
+        </div>
+        <button
+          className="flex flex-row gap-2 items-center font-medium"
+          onClick={() => setIsAscending(!isAscending)}
+        >
+          {isAscending ? (
+            <>
+              Ascending
+              <FontAwesomeIcon icon={faCaretDown} />
+            </>
+          ) : (
+            <>
+              Descending
+              <FontAwesomeIcon icon={faCaretUp} />
+            </>
+          )}
+        </button>
       </div>
     </article>
   );

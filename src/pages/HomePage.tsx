@@ -8,8 +8,10 @@ const HomePage: FC = () => {
         <h1 className="text-7xl text-center md:text-8xl lg:text-9xl font-julius text-orange-800">
           Quran
         </h1>
-        <Filter />
-        <ChapterList />
+        <article className="flex flex-col gap-4">
+          <Filter />
+          <ChapterList />
+        </article>
       </div>
     </section>
   );
