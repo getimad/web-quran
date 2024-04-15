@@ -33,12 +33,20 @@ const ChapterList: FC = () => {
     ? filteredChapters
     : filteredChapters.reverse();
 
-  return (
+  if (filteredChapters.length === 0) {
+    return <div className="text-center text-slate-500">No chapters found</div>;
+  }
+
+  return !isLoading ? (
     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
       {filteredChapters.map((chapter: Chapter) => (
         <SearchItem key={chapter.id} chapter={chapter} />
       ))}
     </ul>
+  ) : (
+    <div className="text-center text-slate-500">
+      {error ? "Failed to load chapters" : "Loading chapters..."}
+    </div>
   );
 };
 
