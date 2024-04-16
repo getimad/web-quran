@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage, ChapterPage } from "./pages";
+import { HomePage, ChapterPage, VersePage } from "./pages";
 import Leyout from "./Leyout";
 
 const routes = createBrowserRouter([
@@ -11,6 +11,10 @@ const routes = createBrowserRouter([
       {
         path: "chapter/:id",
         element: <ChapterPage />,
+      },
+      {
+        path: "verses/:id",
+        element: <VersePage />,
       },
     ],
   },

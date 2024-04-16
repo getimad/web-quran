@@ -1,13 +1,23 @@
 import { FC } from "react";
 import { Chapter } from "../interfaces";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   chapter: Chapter;
 };
 
 const ChapterItem: FC<Props> = ({ chapter }) => {
+  const navigate = useNavigate();
+
+  const onChapterClick = () => {
+    navigate(`verses/${chapter.id}`);
+  };
+
   return (
-    <li className="flex flex-row items-center border-2 rounded-full p-1 border-orange-200">
+    <li
+      className="flex flex-row items-center border-2 rounded-full p-1 border-orange-200"
+      onClick={onChapterClick}
+    >
       <div className="h-12 w-12 flex justify-center items-center rounded-full bg-orange-200">
         <span className="font-bold">{chapter.id}</span>
       </div>

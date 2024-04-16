@@ -1,4 +1,15 @@
 import Chapter from "./Chapter";
-import ChapterResponse from "./ChapterResponse";
+import {
+  MultipleChaptersResponse,
+  SingleChapterResponse,
+} from "./ChapterResponse";
+import Verse from "./Verse";
+import VerseResponse from "./VerseResponse";
 
-export type { ChapterResponse, Chapter };
+export type {
+  Chapter,
+  Verse,
+  VerseResponse,
+  SingleChapterResponse,
+  MultipleChaptersResponse,
+};

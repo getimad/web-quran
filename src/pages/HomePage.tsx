@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Filter, ChapterList } from "../components";
+import { ChapterIFilter, ChapterList } from "../components";
 
 const HomePage: FC = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage: FC = () => {
           Quran
         </h1>
         <article className="flex flex-col gap-4">
-          <Filter />
+          <ChapterIFilter />
           <ChapterList />
         </article>
       </div>

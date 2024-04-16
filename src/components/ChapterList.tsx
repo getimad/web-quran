@@ -1,18 +1,19 @@
 import { FC } from "react";
 import useSWR from "swr";
 import APIClient from "../services/api-client";
-import { Chapter, ChapterResponse } from "../interfaces";
+import { Chapter } from "../interfaces";
 import SearchItem from "./ChapterItem";
 import { useFilterChapterStore } from "../stores";
+import { MultipleChaptersResponse } from "../interfaces/ChapterResponse";
 
-const apiClient = new APIClient<ChapterResponse>();
+const apiClient = new APIClient<MultipleChaptersResponse>();
 
 const ChapterList: FC = () => {
   const {
     data: { chapters = [] } = {},
     isLoading,
     error,
-  } = useSWR<ChapterResponse>("/chapters", (endpoint: string) =>
+  } = useSWR<MultipleChaptersResponse>("/chapters", (endpoint: string) =>
     apiClient.getAll(endpoint),
   );
 

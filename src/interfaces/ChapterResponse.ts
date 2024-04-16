@@ -1,7 +1,11 @@
 import Chapter from "./Chapter";
 
-interface ChapterResponse {
+interface SingleChapterResponse {
+  chapter: Chapter;
+}
+
+interface MultipleChaptersResponse {
   chapters: Chapter[];
 }
 
-export default ChapterResponse;
+export type { SingleChapterResponse, MultipleChaptersResponse };
