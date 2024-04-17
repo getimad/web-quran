@@ -12,22 +12,16 @@ const apiClientVerse = new APIClient<VerseResponse>();
 const apiClientChapter = new APIClient<SingleChapterResponse>();
 
 const VerseList: FC<Props> = ({ id }) => {
-  const {
-    data: { verses = [] } = {},
-    isLoading: verseIsLoading,
-    error: verseError,
-  } = useSWR<VerseResponse>(
-    `/quran/verses/imlaei?chapter_number=${id}`,
-    (endpoint: string) => apiClientVerse.getAll(endpoint),
-  );
+  const { data: { verses = [] } = {}, isLoading: verseIsLoading } =
+    useSWR<VerseResponse>(
+      `/quran/verses/imlaei?chapter_number=${id}`,
+      (endpoint: string) => apiClientVerse.getAll(endpoint),
+    );
 
-  const {
-    data: { chapter } = {},
-    isLoading: chapterIsLoading,
-    error: chapterError,
-  } = useSWR<SingleChapterResponse>(`/chapters/${id}`, (endpoint: string) =>
-    apiClientChapter.getAll(endpoint),
-  );
+  const { data: { chapter } = {}, isLoading: chapterIsLoading } =
+    useSWR<SingleChapterResponse>(`/chapters/${id}`, (endpoint: string) =>
+      apiClientChapter.getAll(endpoint),
+    );
 
   return (
     <>
