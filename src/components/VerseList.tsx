@@ -14,8 +14,8 @@ const apiClientChapter = new APIClient<SingleChapterResponse>();
 const VerseList: FC<Props> = ({ id }) => {
   const {
     data: { verses = [] } = {},
-    isLoading,
-    error,
+    isLoading: verseIsLoading,
+    error: verseError,
   } = useSWR<VerseResponse>(
     `/quran/verses/imlaei?chapter_number=${id}`,
     (endpoint: string) => apiClientVerse.getAll(endpoint),
@@ -37,7 +37,7 @@ const VerseList: FC<Props> = ({ id }) => {
         </h1>
       )}
       <div className="w-full flex flex-col gap-3">
-        {!isLoading &&
+        {!verseIsLoading &&
           verses.map((verse) => <VerseItem key={verse.id} verse={verse} />)}
       </div>
     </>
