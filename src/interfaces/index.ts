@@ -4,6 +4,8 @@ import {
   SingleChapterResponse,
 } from "./ChapterResponse";
 import Verse from "./Verse";
+import VerseInfo from "./VerseInfo";
+import VerseInfoResponse from "./VerseInfoResponse";
 import VerseResponse from "./VerseResponse";
 
 export type {
@@ -12,4 +14,6 @@ export type {
   VerseResponse,
   SingleChapterResponse,
   MultipleChaptersResponse,
+  VerseInfo,
+  VerseInfoResponse,
 };

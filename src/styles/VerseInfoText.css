@@ -1,0 +1,21 @@
+.info-style {
+  * {
+    font-size: small;
+  }
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  ol,
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

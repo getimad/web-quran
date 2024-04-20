@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage, VersePage } from "./pages";
 import Leyout from "./Leyout";
+import VerseInfoPage from "./pages/VerseInfoPage";
 
 const routes = createBrowserRouter([
   {
@@ -10,7 +11,10 @@ const routes = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: "verses/:id",
-        element: <VersePage />,
+        children: [
+          { index: true, element: <VersePage /> },
+          { path: "info", element: <VerseInfoPage /> },
+        ],
       },
     ],
   },
