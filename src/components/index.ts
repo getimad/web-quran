@@ -5,6 +5,7 @@ import VerseList from "./VerseList";
 import VerseItem from "./VerseItem";
 import ScrollTopBtn from "./ScrollTopBtn";
 import GoBackBtn from "./GoBackBtn";
+import VerseInfoBtn from "./VerseInfoBtn";
 
 export {
   ChapterIFilter,
@@ -14,4 +15,5 @@ export {
   VerseItem,
   ScrollTopBtn,
   GoBackBtn,
+  VerseInfoBtn,
 };
